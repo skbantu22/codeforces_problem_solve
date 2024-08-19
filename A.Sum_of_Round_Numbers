@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+
+        int t = n / 1000;     // Thousands place
+        int h = (n % 1000) / 100;  // Hundreds place
+        int te = (n % 100) / 10;    // Tens place
+        int d = n % 10;       // Units place
+
+        int count = 0;
+
+        // Count non-zero components
+        if (t != 0) count++;
+        if (h != 0) count++;
+        if (te != 0) count++;
+        if (d != 0) count++;
+
+        cout << count << endl;
+
+        // Print components in descending order of place values
+        if (t != 0) cout << t * 1000 << " ";
+        if (h != 0) cout << h * 100 << " ";
+        if (te != 0) cout << te * 10 << " ";
+        if (d != 0) cout << d << " ";
+
+        cout << endl;
+    }
+    return 0;
+}
